@@ -20,8 +20,8 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> {
                 //auth.requestMatchers("/error/**").permitAll();
                 //auth.requestMatchers("/api/auth/**").permitAll();
-                auth.requestMatchers("/user/info", "/api/foos/**").authenticated(); //.hasAuthority("SCOPE_read");
-                auth.requestMatchers("/api/foos").authenticated(); //.hasAuthority("SCOPE_write");
+                auth.requestMatchers("/user/info", "/api/foos/**").hasAuthority("SCOPE_read");
+                auth.requestMatchers("/api/foos").hasAuthority("SCOPE_write");
                 auth.anyRequest().authenticated();
             })
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
