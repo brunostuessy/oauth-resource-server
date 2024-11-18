@@ -1,0 +1,7 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://oauth-authorization-server-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/auth/realms/baeldung
+          jwk-set-uri: https://oauth-authorization-server-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/auth/realms/baeldung/protocol/openid-connect/certs

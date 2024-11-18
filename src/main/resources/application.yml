@@ -3,8 +3,10 @@ server:
   servlet:
     context-path: /resource-server
 
-####### resource server configuration properties
 spring:
+  threads:
+    virtual:
+      enabled: true
   jpa:
     defer-datasource-initialization: true
   security:
