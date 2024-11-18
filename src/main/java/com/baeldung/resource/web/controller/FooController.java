@@ -67,9 +67,9 @@ public class FooController {
     }
 
     protected Foo convertToEntity(FooDto dto) {
-        Foo foo = new Foo(dto.getName());
-        if (!StringUtils.isEmpty(dto.getId())) {
-            foo.setId(dto.getId());
+        Foo foo = new Foo(dto.name());
+        if (!StringUtils.isEmpty(dto.id())) {
+            foo.setId(dto.id());
         }
         return foo;
     }
