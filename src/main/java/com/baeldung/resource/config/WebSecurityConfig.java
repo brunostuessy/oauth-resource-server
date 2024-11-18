@@ -17,13 +17,13 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
             //.cors(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests(auth -> {
-                //auth.requestMatchers("/error/**").permitAll();
-                //auth.requestMatchers("/api/auth/**").permitAll();
-                auth.requestMatchers("/user/info", "/api/foos/**").hasAuthority("SCOPE_read");
-                auth.requestMatchers("/api/foos").hasAuthority("SCOPE_write");
-                auth.anyRequest().authenticated();
-            })
+            .authorizeHttpRequests(auth -> auth
+                //.requestMatchers("/error/**").permitAll();
+                //.requestMatchers("/api/auth/**").permitAll();
+                .requestMatchers("/user/info", "/api/foos/**").hasAuthority("SCOPE_read")
+                .requestMatchers("/api/foos").hasAuthority("SCOPE_write")
+                .anyRequest().authenticated()
+            )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()));
         return http.build();
