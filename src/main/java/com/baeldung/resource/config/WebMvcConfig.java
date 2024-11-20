@@ -24,11 +24,12 @@ public class WebMvcConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 WebCorsConfigProperties cors = webCorsConfigProperties;
                 registry.addMapping("/**")
-                    .allowedOrigins(cors.getAllowedOrigins())
-                    .allowedMethods(cors.getAllowedMethods())
-                    .maxAge(cors.getMaxAge())
-                    .allowedHeaders(cors.getAllowedHeaders())
-                    .exposedHeaders(cors.getExposedHeaders());
+                    //.allowedOrigins(cors.getAllowedOrigins())
+                    //.allowedMethods(cors.getAllowedMethods())
+                    //.maxAge(cors.getMaxAge())
+                    //.allowedHeaders(cors.getAllowedHeaders())
+                    //.exposedHeaders(cors.getExposedHeaders())
+                ;
             }
         };
     }
