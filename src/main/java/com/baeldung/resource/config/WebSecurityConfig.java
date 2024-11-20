@@ -46,13 +46,13 @@ public class WebSecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         //configuration.setAllowedOriginPatterns(Arrays.asList(cors.getAllowedOrigins()));
-        //configuration.setAllowedOrigins(Arrays.asList(cors.getAllowedOrigins()));
-        //configuration.setAllowedMethods(Arrays.asList(cors.getAllowedMethods()));
-        //configuration.setMaxAge(cors.getMaxAge());
-        //configuration.setAllowedHeaders(Arrays.asList(cors.getAllowedHeaders()));
-        //configuration.setExposedHeaders(Arrays.asList(cors.getExposedHeaders()));
+        configuration.setAllowedOrigins(Arrays.asList(cors.getAllowedOrigins()));
+        configuration.setAllowedMethods(Arrays.asList(cors.getAllowedMethods()));
+        configuration.setMaxAge(cors.getMaxAge());
+        configuration.setAllowedHeaders(Arrays.asList(cors.getAllowedHeaders()));
+        configuration.setExposedHeaders(Arrays.asList(cors.getExposedHeaders()));
 
-        //configuration.setAllowCredentials(false);
+        configuration.setAllowCredentials(true);
         //configuration.setAllowPrivateNetwork(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
