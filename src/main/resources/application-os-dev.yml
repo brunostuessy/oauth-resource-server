@@ -5,3 +5,11 @@ spring:
         jwt:
           issuer-uri: https://oauth-authorization-server-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/auth/realms/baeldung
           jwk-set-uri: https://oauth-authorization-server-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com/auth/realms/baeldung/protocol/openid-connect/certs
+
+web:
+  cors:
+    allowed-origins: "https://oauth-spring-client-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com", "https://oauth-angular-client-bruno-stuessi-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com"
+    allowed-methods: GET, POST, PUT, DELETE, OPTIONS, HEAD
+    max-age: 3600
+    allowed-headers: "Requestor-Type"
+    exposed-headers: "X-Get-Header"
