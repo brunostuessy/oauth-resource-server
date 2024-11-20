@@ -5,24 +5,38 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "web.cors")
 public class WebCorsConfigProperties {
 
-    private final String[] allowedOrigins;
+    private String[] allowedOrigins;
 
-    private final String[] allowedMethods;
+    private String[] allowedMethods;
 
-    private final String[] allowedHeaders;
+    private String[] allowedHeaders;
 
-    private final String[] exposedHeaders;
+    private String[] exposedHeaders;
 
-    private final long maxAge;
+    private long maxAge;
 
 
-    public WebCorsConfigProperties(String[] allowedOrigins, String[] allowedMethods, long maxAge,
-                                   String[] allowedHeaders, String[] exposedHeaders) {
+    public WebCorsConfigProperties() {
+    }
+
+    public void setAllowedOrigins(String[] allowedOrigins) {
         this.allowedOrigins = allowedOrigins;
+    }
+
+    public void setAllowedMethods(String[] allowedMethods) {
         this.allowedMethods = allowedMethods;
-        this.maxAge = maxAge;
+    }
+
+    public void setAllowedHeaders(String[] allowedHeaders) {
         this.allowedHeaders = allowedHeaders;
+    }
+
+    public void setExposedHeaders(String[] exposedHeaders) {
         this.exposedHeaders = exposedHeaders;
+    }
+
+    public void setMaxAge(long maxAge) {
+        this.maxAge = maxAge;
     }
 
     public String[] getAllowedOrigins() {
