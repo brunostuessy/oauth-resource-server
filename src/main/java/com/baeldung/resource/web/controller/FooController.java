@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +30,6 @@ public class FooController {
         this.fooService = fooService;
     }
 
-    //@CrossOrigin(origins = "http://localhost:8089")
     @GetMapping(value = "/{id}")
     public FooDto findOne(@PathVariable Long id) {
         Foo entity = fooService.findById(id)
