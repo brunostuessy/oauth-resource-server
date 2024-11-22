@@ -41,9 +41,9 @@ public class WebSecurityConfig {
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
-        final WebCorsConfigProperties cors = webCorsConfigProperties();
+        final var cors = webCorsConfigProperties();
 
-        final CorsConfiguration configuration = new CorsConfiguration();
+        final var configuration = new CorsConfiguration();
 
         //configuration.setAllowedOriginPatterns(Arrays.asList(cors.getAllowedOriginPatterns()));
         configuration.setAllowedOrigins(Arrays.asList(cors.getAllowedOrigins()));
@@ -54,7 +54,7 @@ public class WebSecurityConfig {
         configuration.setAllowCredentials(true);
         //configuration.setAllowPrivateNetwork(false);
 
-        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        final var source = new UrlBasedCorsConfigurationSource();
 
         source.registerCorsConfiguration("/**", configuration);
 
