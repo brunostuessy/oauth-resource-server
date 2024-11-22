@@ -26,13 +26,14 @@ public class FooController {
 
     private IFooService fooService;
 
+
     public FooController(IFooService fooService) {
         this.fooService = fooService;
     }
 
     @GetMapping(value = "/{id}")
     public FooDto findOne(@PathVariable Long id) {
-        Foo entity = fooService.findById(id)
+        final var entity = fooService.findById(id)
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
@@ -40,35 +41,32 @@ public class FooController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@RequestBody FooDto newFoo) {
-        Foo entity = convertToEntity(newFoo);
-        this.fooService.save(entity);
+        this.fooService.save(convertToEntity(newFoo));
     }
 
     @GetMapping
     public Collection<FooDto> findAll() {
-        Iterable<Foo> foos = this.fooService.findAll();
-        List<FooDto> fooDtos = new ArrayList<>();
+        final var foos = this.fooService.findAll();
+        var fooDtos = new ArrayList<FooDto>();
         foos.forEach(p -> fooDtos.add(convertToDto(p)));
         return fooDtos;
     }
 
     @PutMapping("/{id}")
     public FooDto updateFoo(@PathVariable("id") Long id, @RequestBody FooDto updatedFoo) {
-        Foo fooEntity = convertToEntity(updatedFoo);
-        return this.convertToDto(this.fooService.save(fooEntity));
+        return this.convertToDto(this.fooService.save(convertToEntity(updatedFoo)));
     }
 
     protected FooDto convertToDto(Foo entity) {
-        FooDto dto = new FooDto(entity.getId(), entity.getName());
-
-        return dto;
+        return new FooDto(entity.getId(), entity.getName());
     }
 
     protected Foo convertToEntity(FooDto dto) {
-        Foo foo = new Foo(dto.name());
-        if (!StringUtils.isEmpty(dto.id())) {
+        final var foo = new Foo(dto.name());
+        if (dto.id() != 0L) {
             foo.setId(dto.id());
         }
         return foo;
     }
+
 }
