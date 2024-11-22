@@ -63,7 +63,7 @@ public class FooController {
 
     protected Foo convertToEntity(FooDto dto) {
         final var foo = new Foo(dto.name());
-        if (dto.id() != 0L) {
+        if (dto.id() != null) {
             foo.setId(dto.id());
         }
         return foo;
