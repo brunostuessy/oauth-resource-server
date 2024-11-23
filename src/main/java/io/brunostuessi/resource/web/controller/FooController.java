@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,13 +20,15 @@ import io.brunostuessi.resource.service.IFooService;
 import io.brunostuessi.resource.web.dto.FooDto;
 
 @RestController
-@RequestMapping(value = "/api/foos")
+@RequestMapping(value = "/api/foos",
+    produces = MediaType.APPLICATION_JSON_VALUE
+)
 public class FooController {
 
-    private IFooService fooService;
+    private final IFooService fooService;
 
 
-    public FooController(IFooService fooService) {
+    public FooController(final IFooService fooService) {
         this.fooService = fooService;
     }
 
