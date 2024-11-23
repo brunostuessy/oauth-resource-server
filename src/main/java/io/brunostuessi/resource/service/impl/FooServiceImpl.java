@@ -1,12 +1,12 @@
-package com.baeldung.resource.service.impl;
+package io.brunostuessi.resource.service.impl;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.baeldung.resource.persistence.model.Foo;
-import com.baeldung.resource.persistence.repository.IFooRepository;
-import com.baeldung.resource.service.IFooService;
+import io.brunostuessi.resource.persistence.model.Foo;
+import io.brunostuessi.resource.persistence.repository.IFooRepository;
+import io.brunostuessi.resource.service.IFooService;
 
 @Service
 public class FooServiceImpl implements IFooService {

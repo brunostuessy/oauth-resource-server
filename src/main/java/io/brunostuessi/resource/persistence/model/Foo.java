@@ -1,4 +1,4 @@
-package com.baeldung.resource.persistence.model;
+package io.brunostuessi.resource.persistence.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

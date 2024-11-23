@@ -1,4 +1,4 @@
-package com.baeldung.resource.web.controller;
+package io.brunostuessi.resource.web.controller;
 
 import java.util.Collections;
 import java.util.Map;

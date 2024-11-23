@@ -80,7 +80,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.baeldung.resource.ResourceServerApp</mainClass>
+                    <mainClass>io.brunostuessi.resource.ResourceServerApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

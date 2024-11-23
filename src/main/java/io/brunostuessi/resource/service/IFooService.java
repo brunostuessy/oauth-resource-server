@@ -1,8 +1,8 @@
-package com.baeldung.resource.service;
+package io.brunostuessi.resource.service;
 
 import java.util.Optional;
 
-import com.baeldung.resource.persistence.model.Foo;
+import io.brunostuessi.resource.persistence.model.Foo;
 
 
 public interface IFooService {

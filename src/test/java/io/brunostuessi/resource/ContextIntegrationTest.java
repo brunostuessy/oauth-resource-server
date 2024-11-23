@@ -1,9 +1,7 @@
-package com.baeldung.resource;
+package io.brunostuessi.resource;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import com.baeldung.resource.ResourceServerApp;
 
 @SpringBootTest(classes = { ResourceServerApp.class })
 public class ContextIntegrationTest {

@@ -1,4 +1,4 @@
-package com.baeldung.resource.config;
+package io.brunostuessi.resource.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

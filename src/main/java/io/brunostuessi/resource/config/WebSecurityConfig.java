@@ -1,4 +1,4 @@
-package com.baeldung.resource.config;
+package io.brunostuessi.resource.config;
 
 import java.util.Arrays;
 
