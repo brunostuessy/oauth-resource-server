@@ -37,7 +37,7 @@ public class ImplicitFlowLiveTest {
 	private String obtainAccessToken(String clientId, String username, String password) {
 		String authorizeUrl = AUTH_SERVER + "/auth";
 
-		Map<String, String> loginParams = new HashMap<String, String>();
+		Map<String, String> loginParams = new HashMap<>();
 		loginParams.put("grant_type", "implicit");
 		loginParams.put("client_id", clientId);
 		loginParams.put("response_type", "token");
@@ -51,7 +51,7 @@ public class ImplicitFlowLiveTest {
 		String authUrlWithCode = response.htmlPath().getString("'**'.find{node -> node.name()=='form'}*.@action");
 		
 		// get access token
-		Map<String, String> tokenParams = new HashMap<String, String>();
+		Map<String, String> tokenParams = new HashMap<>();
 		tokenParams.put("username", username);
 		tokenParams.put("password", password);
 		tokenParams.put("client_id", clientId);

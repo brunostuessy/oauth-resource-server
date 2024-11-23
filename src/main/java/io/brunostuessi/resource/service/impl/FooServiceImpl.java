@@ -11,9 +11,9 @@ import io.brunostuessi.resource.service.IFooService;
 @Service
 public class FooServiceImpl implements IFooService {
 
-    private IFooRepository fooRepository;
+    private final IFooRepository fooRepository;
 
-    public FooServiceImpl(IFooRepository fooRepository) {
+    public FooServiceImpl(final IFooRepository fooRepository) {
         this.fooRepository = fooRepository;
     }
 

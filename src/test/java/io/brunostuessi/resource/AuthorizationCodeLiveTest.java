@@ -38,7 +38,7 @@ public class AuthorizationCodeLiveTest {
 		String authorizeUrl = AUTH_SERVER + "/auth";
 		String tokenUrl = AUTH_SERVER + "/token";
 
-		Map<String, String> loginParams = new HashMap<String, String>();
+		Map<String, String> loginParams = new HashMap<>();
 		loginParams.put("client_id", CLIENT_ID);
 		loginParams.put("response_type", "code");
 		loginParams.put("redirect_uri", REDIRECT_URL);
@@ -51,7 +51,7 @@ public class AuthorizationCodeLiveTest {
 		String authUrlWithCode = response.htmlPath().getString("'**'.find{node -> node.name()=='form'}*.@action");
 		
 		// get code
-		Map<String, String> codeParams = new HashMap<String, String>();
+		Map<String, String> codeParams = new HashMap<>();
 		codeParams.put("username", username);
 		codeParams.put("password", password);
 		response = RestAssured.given().cookie("AUTH_SESSION_ID", cookieValue).formParams(codeParams)
@@ -63,7 +63,7 @@ public class AuthorizationCodeLiveTest {
 		final String code = location.split("#|=|&")[3];
 		
 		//get access token
-		Map<String, String> tokenParams = new HashMap<String, String>();
+		Map<String, String> tokenParams = new HashMap<>();
 		tokenParams.put("grant_type", "authorization_code");
 		tokenParams.put("client_id", CLIENT_ID);
 		tokenParams.put("client_secret", CLIENT_SECRET);

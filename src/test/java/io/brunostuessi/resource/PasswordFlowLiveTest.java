@@ -33,7 +33,7 @@ public class PasswordFlowLiveTest {
 	}
 
 	private String obtainAccessToken(String clientId, String username, String password) {
-		final Map<String, String> params = new HashMap<String, String>();
+		final Map<String, String> params = new HashMap<>();
 		params.put("grant_type", "password");
 		params.put("client_id", clientId);
 		params.put("username", username);
