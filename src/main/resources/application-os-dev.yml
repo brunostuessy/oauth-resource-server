@@ -13,3 +13,19 @@ web:
     max-age: 3600
     allowed-headers: "*"
     exposed-headers: "Access-Control-Allow-Origin,Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Max-Age,Access-Control-Allow-Headers"
+
+logging:
+  level:
+    org.springframework: INFO
+    org.springframework.security: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+    access:
+      default: none
+  endpoint:
+    health:
+      access: read-only
